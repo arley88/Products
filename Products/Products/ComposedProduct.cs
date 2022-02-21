@@ -8,14 +8,14 @@ namespace Products
         public float Discount { get; set; }
         public ICollection<Product> Products;
 
-        public override decimal ValuetoPay()
+        public override decimal ValueToPay()
         {
             decimal payroll=0;
             decimal total1 = 0;
             decimal total2 = 0;
             foreach (Product product in Products)
             {
-                payroll += product.ValuetoPay();
+                payroll += product.ValueToPay();
             }
             
             total1 = payroll * (decimal)Discount;
@@ -38,7 +38,7 @@ namespace Products
             return $"   {Id} {Description}" +
                 $"\n\tProducts..: {Names()}" +
                 $"\n\tDiscaunt..: {$"{Discount:P2}",15}" +
-                $"\n\tValue.....: {$"{ValuetoPay():C2}",15}";
+                $"\n\tValue.....: {$"{ValueToPay():C2}",15}";
         }
     }
 }

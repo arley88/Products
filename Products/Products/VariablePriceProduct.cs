@@ -7,7 +7,7 @@ namespace Products
         public string Measurement { get; set; }
         public float Quantity { get; set; }
 
-        public override decimal ValuetoPay()
+        public override decimal ValueToPay()
         {
             decimal total1 = Price * (decimal)Quantity;
             decimal total2 = total1 * (decimal)Tax;
@@ -22,7 +22,7 @@ namespace Products
                 $"\n\tQuantity..: {$"{Quantity:N2}",15}" +
                 $"\n\tPrice.....: {$"{Price:C2}",15}" +
                 $"\n\tTax.......: {$"{Tax:P2}",15}" +
-                $"\n\tValue.....: {$"{ValuetoPay():C2}",15}"; ;
+                $"\n\tValue.....: {$"{ValueToPay():C2}",15}"; ;
         }
     }
 }

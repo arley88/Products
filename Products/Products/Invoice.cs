@@ -20,7 +20,7 @@ namespace Products
             decimal payroll = 0;
             foreach (Product product in _products)
             {
-                payroll += product.ValuetoPay();
+                payroll += product.ValueToPay();
             }
             return payroll;
         }
