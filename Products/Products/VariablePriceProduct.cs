@@ -17,7 +17,7 @@ namespace Products
 
         public override string ToString()
         {
-            return $"{Id} - {Description}" +
+            return $"   {Id} {Description}" +
                 $"\n\tMeasument.: {Measurement}" +
                 $"\n\tQuantity..: {$"{Quantity:N2}",15}" +
                 $"\n\tPrice.....: {$"{Price:C2}",15}" +

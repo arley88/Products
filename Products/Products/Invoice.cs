@@ -1,32 +1,42 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
 namespace Products
 {
-    public class Invoice: IPay
+    public class Invoice : IPay
     {
-        private Product _products;
+        private ICollection<Product> _products;
 
-        public Invoice(Product products)
+        public Invoice()
         {
-            _products = products;
+            _products = new List<Product>();
         }
 
         internal void AddProduct(Product product1)
         {
-            throw new NotImplementedException();
+                _products.Add(product1);
         }
         public decimal ValueToPay()
         {
-            return 0;
+            decimal payroll = 0;
+            foreach (Product product in _products)
+            {
+                payroll += product.ValuetoPay();
+            }
+            return payroll;
         }
-        //public override string ToString()
-        //{
-        //    return $"\n\t{Id} - {Description}" +
-        //        $"\n\tQuantity......: {$"{Quantity:N2}",18}" +
-        //        $"\n\tPrice.........: {$"{Price:C2}",18}" +
-        //        $"\n\tValue.........: {$"{ValueToPay():C2}",18}";
-        //}
-        
-        
+        public override string ToString()
+        {
+            string text = $"RECEIPT " +
+                $"\n-------------------------------------------------";
+            foreach (Product product in _products)
+            {
+                text += $"\n" + product.ToString();
+            }
+            return $"{text}" +
+                $"\n\t\t   ================"+
+                $"\nTOTAL:              {$"{ValueToPay():C2}",15}"; ;
+        }
+
+
     }
 }

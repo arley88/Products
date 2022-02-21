@@ -54,13 +54,11 @@ namespace Products
             Console.WriteLine(product4);
             Console.WriteLine(product5);
 
-            //Invoice invoice = new Invoice();
-            //invoice.AddProduct(product1);
-            //invoice.AddProduct(product3);
-            //invoice.AddProduct(product5);
-            //Console.WriteLine(invoice);
-
-            //Console.WriteLine("Hello World!");
+            Invoice invoice = new Invoice();
+            invoice.AddProduct(product1);
+            invoice.AddProduct(product3);
+            invoice.AddProduct(product5);
+            Console.WriteLine(invoice);
         }
     }
 }
