@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Products
+﻿namespace Products
 {
     public class VariablePriceProduct : Product
     {
@@ -10,10 +8,9 @@ namespace Products
         public override decimal ValueToPay()
         {
             decimal total1 = Price * (decimal)Quantity;
-            decimal total2 = total1 * (decimal)Tax;
-            decimal total3 = total2 + total1;
-            return total3;
+            return (total1 * (decimal)Tax) + total1;
         }
+
 
         public override string ToString()
         {

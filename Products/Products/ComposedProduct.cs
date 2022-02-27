@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Products
 {
@@ -10,14 +9,13 @@ namespace Products
 
         public override decimal ValueToPay()
         {
-            decimal payroll=0;
+            decimal payroll = 0;
             decimal total1 = 0;
             decimal total2 = 0;
             foreach (Product product in Products)
             {
                 payroll += product.ValueToPay();
             }
-            
             total1 = payroll * (decimal)Discount;
             total2 = payroll - total1;
 
@@ -25,10 +23,10 @@ namespace Products
         }
         public string Names()
         {
-            string names ="";
+            string names = "";
             foreach (Product product in Products)
             {
-                names += product.Description+", ";
+                names += product.Description + ", ";
             }
             return names;
         }
