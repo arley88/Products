@@ -26,7 +26,7 @@ namespace Products
             string names = "";
             foreach (Product product in Products)
             {
-                names += product.Description + ", ";
+                names += ", "+product.Description ;
             }
             return names;
         }
